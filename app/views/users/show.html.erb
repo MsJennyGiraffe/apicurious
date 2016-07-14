@@ -9,13 +9,14 @@
   <div class="col-md-8">
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
-        <div class="panel-body">
-        <% @repos.each do |repo| %>
-        <div class="panel-body">
-          <h5 class="text-center"><%= repo.name %></h5>
+        <div class="panel-heading">
+          <h3 class="panel-title text-center">My Repositories</h3>
         </div>
+          <ul class="list-group">
+        <% @repos.each do |repo| %>
+          <li class="list-group-item"><h5 class="text-center"><%= repo.name %></h5></li>
         <% end %>
-      </div>
+      </ul>
     </div>
 
       <a href= <%= user_followers_path(@user.id) %>>
