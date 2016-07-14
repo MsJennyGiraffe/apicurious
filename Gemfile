@@ -19,6 +19,8 @@ gem 'unicorn'
 gem 'figaro'
 gem 'bootstrap-sass'
 gem 'omniauth-github'
+# gem 'omniauth-oauth2'
+# gem 'omniauth'
 gem 'faraday'
 gem 'simplecov', :require => false, :group => :test
 
