@@ -1,0 +1,5 @@
+<h3 class="text-center"><%= @user.screen_name %></h3>
+
+  <div class="col-md-8 col-md-offset-2">
+    <%= link_to "See Followers", user_followers_path(@user.id), class: "btn btn-info btn-block" %>
+  </div>

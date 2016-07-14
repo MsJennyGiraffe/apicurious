@@ -1,0 +1,15 @@
+<h1 class="text-center"><%= @user.screen_name %>'s Followers</h1>
+
+<table class="table">
+  <thead>
+    <th>Name</th>
+    <th>Info</th>
+  </thead>
+
+  <% @followers.each do |follower| %>
+  <tbody>
+      <td><%= follower.login %></td>
+      <td><%= follower %></td>
+    <% end %>
+  </tbody>
+</table>
