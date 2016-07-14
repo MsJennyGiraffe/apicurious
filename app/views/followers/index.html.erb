@@ -1,15 +1,10 @@
 <h1 class="text-center"><%= @user.screen_name %>'s Followers</h1>
+<div class="col-md-8 col-md-offset-2">
 
-<table class="table">
-  <thead>
-    <th>Name</th>
-    <th>Info</th>
-  </thead>
-
-  <% @followers.each do |follower| %>
-  <tbody>
-      <td><%= follower.login %></td>
-      <td><%= follower %></td>
+  <% @followers.each do |followers| %>
+    <div class="col-md-3">
+      <img class="img-responsive" src=<%= followers.avatar_url %>>
+      <h5 class="text-center"><%= followers.login %></h5>
+    </div>
     <% end %>
-  </tbody>
-</table>
+  </div>

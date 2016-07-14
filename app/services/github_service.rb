@@ -8,6 +8,11 @@ class GithubService
     parse(response)
   end
 
+  def get_user_account_followings(screen_name)
+    response = @connection.get("/users/#{screen_name}/following")
+    parse(response)
+  end
+
   def parse(response)
     JSON.parse(response.body)
   end
