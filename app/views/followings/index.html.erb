@@ -4,7 +4,7 @@
   <% @followings.each do |following| %>
     <div class="col-md-3">
       <img class="img-responsive" src=<%= following.avatar_url %>>
-      <h5 class="text-center"><%= following.login %></h5>
+      <h5 class="text-center"><a href="http://www.github.com/<%= following.login %>"> <%= following.login %></a></h5>
     </div>
     <% end %>
   </div>
