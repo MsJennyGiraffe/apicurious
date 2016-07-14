@@ -11,7 +11,25 @@ require 'vcr'
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
   c.hook_into :webmock
+  c.configure_rspec_metadata!
 end
+
+OmniAuth.config.test_mode = true
+OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+  provider: 'github',
+  extra: {
+    raw_info: {
+      uid: "1234",
+      name: "Jenny",
+      avatar_url: "picture.picture",
+      login: "test_user",
+    }
+  },
+  credentials: {
+    token: "pizza",
+    secret: "secretpizza"
+  }
+})
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
