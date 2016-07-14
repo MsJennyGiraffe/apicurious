@@ -13,6 +13,11 @@ class GithubService
     parse(response)
   end
 
+  def get_user_repos(screen_name)
+    response = @connection.get("/users/#{screen_name}/repos")
+    parse(response)
+  end
+
   def parse(response)
     JSON.parse(response.body)
   end

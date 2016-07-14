@@ -1,10 +1,10 @@
 <h1 class="text-center"><%= @user.screen_name %>'s Followers</h1>
 <div class="col-md-8 col-md-offset-2">
 
-  <% @followers.each do |followers| %>
+  <% @followers.each do |follower| %>
     <div class="col-md-3">
-      <img class="img-responsive" src=<%= followers.avatar_url %>>
-      <h5 class="text-center"><%= followers.login %></h5>
+      <img class="img-responsive" src=<%= follower.avatar_url %>>
+      <h5 class="text-center"><a href="http://www.github.com/<%= follower.login %>"> <%= follower.login %></a></h5>
     </div>
     <% end %>
   </div>

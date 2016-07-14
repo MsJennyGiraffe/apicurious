@@ -1,0 +1,11 @@
+<h1 class="text-center"><%= @user.screen_name %>'s Repos</h1>
+<br>
+<div class="col-md-8 col-md-offset-2">
+  <ul>
+    <% @repos.each do |repo| %>
+    <div class="col-md-4">
+      <h5><%= repo.name %></h5>
+    </div>
+    <% end %>
+  <ul>
+</div>

@@ -1,25 +1,38 @@
 <div class="col-md-10 col-md-offset-1">
 
-  <div class="col-md-4">
+  <div class="col-md-3">
     <img class="img-responsive img-rounded" src=<%= @user.avatar %>>
     <h3><%= @user.name %></h3>
     <h4><%= @user.screen_name %></h4>
   </div>
 
-  <div class="col-md-8">
+  <div class="col-md-9">
     <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-titler">My Repositories</h3>
+        </div>
+          <ul class="list-group">
+        <% @repos.each do |repo| %>
+          <li class="list-group-item"><%= repo.name %></li>
+        <% end %>
+        <li class="list-group-item"><%= link_to "See All Repos", user_repos_path(@user) %></span></li>
+      </ul>
+    </div>
+
       <a href= <%= user_followers_path(@user.id) %>>
         <button class="btn btn-primary btn-block" type="button">
           See Followers <span class="badge"> <%= @followers.count %></span>
         </button>
       </a>
-    <div>
-      <a href= <%= user_followings_path(@user.id) %>>
-        <button class="btn btn-info btn-block" type="button">
-          See Followings <span class="badge"> <%= @followings.count %></span>
-        </button>
-      </a>
-    </div>
-    </div>
+
+      <div>
+        <a href= <%= user_followings_path(@user.id) %>>
+          <button class="btn btn-info btn-block" type="button">
+            See Followings <span class="badge"> <%= @followings.count %></span>
+          </button>
+        </a>
+      </div>
   </div>
+</div>
 </div>
