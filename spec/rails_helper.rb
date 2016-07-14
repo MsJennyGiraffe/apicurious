@@ -14,22 +14,22 @@ VCR.configure do |c|
   c.configure_rspec_metadata!
 end
 
-# OmniAuth.config.test_mode = true
-# OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
-#   provider: 'github',
-#   extra: {
-#     raw_info: {
-#       uid: "1234",
-#       name: "Jennifer",
-#       avatar_url: "picture.picture",
-#       login: "MsJennyGiraffe",
-#     }
-#   },
-#   credentials: {
-#     token: "pizza",
-#     secret: "secretpizza"
-#   }
-# })
+OmniAuth.config.test_mode = true
+OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+  provider: 'github',
+  extra: {
+    raw_info: {
+      uid: "1234",
+      name: "Jennifer",
+      avatar_url: "picture.picture",
+      login: "MsJennyGiraffe",
+    }
+  },
+  credentials: {
+    token: "pizza",
+    secret: "secretpizza"
+  }
+})
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
