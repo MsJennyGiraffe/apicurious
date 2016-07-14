@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resources :followers, only: [:index]
-    # resources :repos, only: [:index]
+    resources :followings, only: [:index]
   end
 
   get '/auth/github', as: :github_login

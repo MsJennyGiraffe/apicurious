@@ -12,4 +12,18 @@ describe GithubService do
       end
     end
   end
+
+  describe GithubService do
+    context "#following" do
+      it "returns a an list of people the user follows" do
+        VCR.use_cassette("following") do
+          followings = GithubService.new.get_user_account_followings("MsJennyGiraffe")
+          following = followings.first
+          expect(followings.count).to eq(29)
+          expect(following["login"]).to eq("neight-allen")
+          expect(following["id"]).to eq(1031646)
+        end
+      end
+    end
+  end
 end
