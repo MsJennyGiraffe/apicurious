@@ -20,9 +20,9 @@ OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
   extra: {
     raw_info: {
       uid: "1234",
-      name: "Jenny",
+      name: "Jennifer",
       avatar_url: "picture.picture",
-      login: "test_user",
+      login: "MsJennyGiraffe",
     }
   },
   credentials: {
