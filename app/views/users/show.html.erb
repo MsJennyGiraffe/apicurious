@@ -8,18 +8,29 @@
 
   <div class="col-md-8">
     <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-default">
+        <div class="panel-body">
+        <% @repos.each do |repo| %>
+        <div class="panel-body">
+          <h5 class="text-center"><%= repo.name %></h5>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
       <a href= <%= user_followers_path(@user.id) %>>
         <button class="btn btn-primary btn-block" type="button">
           See Followers <span class="badge"> <%= @followers.count %></span>
         </button>
       </a>
-    <div>
-      <a href= <%= user_followings_path(@user.id) %>>
-        <button class="btn btn-info btn-block" type="button">
-          See Followings <span class="badge"> <%= @followings.count %></span>
-        </button>
-      </a>
-    </div>
-    </div>
+
+      <div>
+        <a href= <%= user_followings_path(@user.id) %>>
+          <button class="btn btn-info btn-block" type="button">
+            See Followings <span class="badge"> <%= @followings.count %></span>
+          </button>
+        </a>
+      </div>
   </div>
+</div>
 </div>
